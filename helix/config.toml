@@ -1,14 +1,30 @@
-theme = "onedark"
-
-[keys.normal]
-"ret" = "goto_word"
-
-[keys.normal."space"]
-o = "file_picker_in_current_buffer_directory"
+theme = "curzon"
 
 [editor]
+line-number = "relative"
 cursorline = true
-lsp.display-inlay-hints = true
+completion-timeout = 5
+
+[editor.lsp]
+display-progress-messages = true
+display-inlay-hints = true
+
+[editor.soft-wrap]
+enable = true
 
 [editor.inline-diagnostics]
 cursor-line = "hint"
+other-lines = "hint"
+
+[keys.normal]
+A-j = "goto_word"
+A-k = "file_picker_in_current_buffer_directory"
+A-s = ":w"
+C-s = ":w"
+Cmd-s = ":w"
+
+[keys.insert]
+A-j = "normal_mode"
+A-s = [":w", "normal_mode"]
+C-s = [":w", "normal_mode"]
+Cmd-s = [":w", "normal_mode"]
