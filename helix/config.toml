@@ -1,13 +1,13 @@
 theme = "curzon"
 
 [editor]
-line-number = "relative"
-cursorline = true
 completion-timeout = 5
+cursorline = true
+line-number = "relative"
 
 [editor.lsp]
-display-progress-messages = true
 display-inlay-hints = true
+display-progress-messages = true
 
 [editor.soft-wrap]
 enable = true
