@@ -1,0 +1,11 @@
+# For Windows 10/11
+# Use `winget install nmap` to install nmap
+# This will install ncat
+# Install gdformat: https://github.com/Scony/godot-gdscript-toolkit
+[language-server.godot]
+args = ["127.0.0.1", "6005"]
+command = "ncat"
+
+[[language]]
+language-servers = ["godot"]
+name = "gdscript"
