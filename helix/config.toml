@@ -1,0 +1,14 @@
+theme = "onedark"
+
+[keys.normal]
+"ret" = "goto_word"
+
+[keys.normal."space"]
+o = "file_picker_in_current_buffer_directory"
+
+[editor]
+cursorline = true
+lsp.display-inlay-hints = true
+
+[editor.inline-diagnostics]
+cursor-line = "hint"
