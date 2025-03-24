@@ -11,65 +11,45 @@ export PATH="$PATH:$GOPATH/bin"
 export GO111MODULE="on"
 export GOPROXY="https://goproxy.cn,direct"
 # homebrew
-export HOMEBREW_API_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles/api"
-export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.tuna.tsinghua.edu.cn/homebrew-bottles"
-export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git"
+export HOMEBREW_BREW_GIT_REMOTE="https://mirrors.ustc.edu.cn/brew.git"
+export HOMEBREW_CORE_GIT_REMOTE="https://mirrors.ustc.edu.cn/homebrew-core.git"
+export HOMEBREW_BOTTLE_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles"
+export HOMEBREW_API_DOMAIN="https://mirrors.ustc.edu.cn/homebrew-bottles/api"
 # flutter
 export PATH="$HOME/flutter/bin:$PATH"
 export PUB_HOSTED_URL="https://pub.flutter-io.cn"
 export FLUTTER_STORAGE_BASE_URL="https://storage.flutter-io.cn"
-# === NPM BINRAY CHINA ===
+# npm
 # https://github.com/cnpm/binary-mirror-config/blob/master/package.json#L48
-export NODEJS_ORG_MIRROR="https://cdn.npmmirror.com/binaries/node"
-export NVM_NODEJS_ORG_MIRROR="https://cdn.npmmirror.com/binaries/node"
-export PHANTOMJS_CDNURL="https://cdn.npmmirror.com/binaries/phantomjs"
-export CHROMEDRIVER_CDNURL="https://cdn.npmmirror.com/binaries/chromedriver"
-export OPERADRIVER_CDNURL="https://cdn.npmmirror.com/binaries/operadriver"
-export ELECTRON_MIRROR="https://cdn.npmmirror.com/binaries/electron/"
-export ELECTRON_BUILDER_BINARIES_MIRROR="https://cdn.npmmirror.com/binaries/electron-builder-binaries/"
-export SASS_BINARY_SITE="https://cdn.npmmirror.com/binaries/node-sass"
-export SWC_BINARY_SITE="https://cdn.npmmirror.com/binaries/node-swc"
-export NWJS_URLBASE="https://cdn.npmmirror.com/binaries/nwjs/v"
-export PUPPETEER_DOWNLOAD_HOST="https://cdn.npmmirror.com/binaries"
-export SENTRYCLI_CDNURL="https://cdn.npmmirror.com/binaries/sentry-cli"
-export SAUCECTL_INSTALL_BINARY_MIRROR="https://cdn.npmmirror.com/binaries/saucectl"
-export npm_config_sharp_binary_host="https://cdn.npmmirror.com/binaries/sharp"
-export npm_config_sharp_libvips_binary_host="https://cdn.npmmirror.com/binaries/sharp-libvips"
-export npm_config_robotjs_binary_host="https://cdn.npmmirror.com/binaries/robotj"
+export "COREPACK_NPM_REGISTRY"="https://registry.npmmirror.com"
+export "EDGEDRIVER_CDNURL"="https://npmmirror.com/mirrors/edgedriver"
+export "NODEJS_ORG_MIRROR"="https://cdn.npmmirror.com/binaries/node"
+export "NVM_NODEJS_ORG_MIRROR"="https://cdn.npmmirror.com/binaries/node"
+export "PHANTOMJS_CDNURL"="https://cdn.npmmirror.com/binaries/phantomjs"
+export "CHROMEDRIVER_CDNURL"="https://cdn.npmmirror.com/binaries/chromedriver"
+export "OPERADRIVER_CDNURL"="https://cdn.npmmirror.com/binaries/operadriver"
+export "CYPRESS_DOWNLOAD_PATH_TEMPLATE"="https://cdn.npmmirror.com/binaries/cypress/${version}/${platform}-${arch}/cypress.zip"
+export "ELECTRON_MIRROR"="https://cdn.npmmirror.com/binaries/electron/"
+export "ELECTRON_BUILDER_BINARIES_MIRROR"="https://cdn.npmmirror.com/binaries/electron-builder-binaries/"
+export "SASS_BINARY_SITE"="https://cdn.npmmirror.com/binaries/node-sass"
+export "SWC_BINARY_SITE"="https://cdn.npmmirror.com/binaries/node-swc"
+export "NWJS_URLBASE"="https://cdn.npmmirror.com/binaries/nwjs/v"
+export "PUPPETEER_DOWNLOAD_HOST"="https://cdn.npmmirror.com/binaries/chrome-for-testing"
+export "PUPPETEER_DOWNLOAD_BASE_URL"="https://cdn.npmmirror.com/binaries/chrome-for-testing"
+export "PLAYWRIGHT_DOWNLOAD_HOST"="https://cdn.npmmirror.com/binaries/playwright"
+export "SENTRYCLI_CDNURL"="https://cdn.npmmirror.com/binaries/sentry-cli"
+export "SAUCECTL_INSTALL_BINARY_MIRROR"="https://cdn.npmmirror.com/binaries/saucectl"
+export "RE2_DOWNLOAD_MIRROR"="https://cdn.npmmirror.com/binaries/node-re2"
+export "RE2_DOWNLOAD_SKIP_PATH"="true"
+export "PRISMA_ENGINES_MIRROR"="https://cdn.npmmirror.com/binaries/prisma"
+export "npm_config_better_sqlite3_binary_host"="https://cdn.npmmirror.com/binaries/better-sqlite3"
+export "npm_config_keytar_binary_host"="https://cdn.npmmirror.com/binaries/keytar"
+export "npm_config_sharp_binary_host"="https://cdn.npmmirror.com/binaries/sharp"
+export "npm_config_sharp_libvips_binary_host"="https://cdn.npmmirror.com/binaries/sharp-libvips"
+export "npm_config_robotjs_binary_host"="https://cdn.npmmirror.com/binaries/robotjs"
+export "npm_config_gl_binary_host"="https://cdn.npmmirror.com/binaries/gl"
 # jetbrains
 export PATH="/Users/jerry/Library/Application Support/JetBrains/Toolbox/scripts:$PATH"
-
-# HISTORY
-HISTFILE=$HOME/.zsh_history
-HISTSIZE=50000
-SAVEHIST=50000
-
-# Immediately append to history file:
-setopt INC_APPEND_HISTORY
-
-# Record timestamp in history:
-setopt EXTENDED_HISTORY
-
-# Expire duplicate entries first when trimming history:
-setopt HIST_EXPIRE_DUPS_FIRST
-
-# Dont record an entry that was just recorded again:
-setopt HIST_IGNORE_DUPS
-
-# Delete old recorded entry if new entry is a duplicate:
-setopt HIST_IGNORE_ALL_DUPS
-
-# Do not display a line previously found:
-setopt HIST_FIND_NO_DUPS
-
-# Dont record an entry starting with a space:
-setopt HIST_IGNORE_SPACE
-
-# Dont write duplicate entries in the history file:
-setopt HIST_SAVE_NO_DUPS
-
-# Share history between all sessions:
-setopt SHARE_HISTORY
-
-# Execute commands using history (e.g.: using !$) immediatel:
-unsetopt HIST_VERIFY
+# dotnet
+export DOTNET_ROOT="/usr/local/opt/dotnet/libexec"
+export PATH="/usr/local/opt/dotnet/bin:$PATH"
