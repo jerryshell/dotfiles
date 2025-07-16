@@ -1,7 +1,7 @@
 [http]
-	proxy = socks5://127.0.0.1:7897
+	proxy = socks5://127.0.0.1:7890
 [https]
-	proxy = socks5://127.0.0.1:7897
+	proxy = socks5://127.0.0.1:7890
 [core]
 	fsmonitor = true
 	untrackedCache = true
