@@ -6,7 +6,11 @@
 	name = Jerry
 	email = calljerryli@outlook.com
 [core]
-ignorecase = false
-excludesfile = ~/.gitignore
+	ignorecase = false
+	excludesfile = ~/.gitignore
 [pull]
 	rebase = true
+[merge]
+	conflictStyle = zdiff3
+[init]
+	defaultBranch = master
