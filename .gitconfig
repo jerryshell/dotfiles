@@ -6,6 +6,8 @@
 	name = Jerry
 	email = calljerryli@outlook.com
 [core]
+	autocrlf = true
+	filemode = false
 	ignorecase = false
 	excludesfile = ~/.gitignore
 [pull]
