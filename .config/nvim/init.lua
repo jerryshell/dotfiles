@@ -80,10 +80,35 @@ for i = 1, 9 do
 end
 vim.keymap.set('n', '<leader>h', '<cmd>help<CR>', { desc = '帮助' })
 vim.keymap.set('n', '<leader>e', vim.cmd.Lexplore, { desc = '左侧文件树' })
--- :find / gf 递归搜索
-vim.o.path = '**'
-vim.keymap.set('n', '<leader>f', ':find ', { desc = '找文件' })
+-- === 搜索：自动检测工具，没有则用内置 ===
+-- 文件查找：有 fzf 用 fzf 选择器（fd/find 喂列表），否则内置 :find
+vim.o.path = '**' -- :find / gf 递归搜索的路径
+local function has_tool(t) return vim.fn.executable(t) == 1 end
+local function fzf_files()
+    -- 列表源：有 fd 用 fd（快），否则 find；fzf 选中的路径写入临时文件
+    local listcmd = has_tool('fd') and 'fd -t f -H -I' or 'find . -type f'
+    local outfile = vim.fn.tempname()
+    vim.fn.termopen({ 'bash', '-lc', listcmd .. ' | fzf > ' .. outfile }, {
+        on_exit = function()
+            local sel = vim.fn.readfile(outfile)
+            vim.fn.delete(outfile)
+            if #sel > 0 then vim.cmd.edit(sel[1]) end -- Esc/中断则不打开
+        end,
+    })
+end
+if has_tool('fzf') then
+    vim.keymap.set('n', '<leader>f', fzf_files, { desc = '找文件(fzf)' })
+else
+    vim.keymap.set('n', '<leader>f', ':find ', { desc = '找文件(内置)' })
+end
 vim.keymap.set('n', '<leader>b', ':b ', { desc = '跳转缓冲区' })
+
+-- 内容搜索：有 rg 用 rg 进 quickfix（]q/[q 浏览），否则内置 grep
+if has_tool('rg') then
+    vim.o.grepprg = 'rg --vimgrep'
+    vim.o.grepformat = '%f:%l:%c:%m'
+end
+vim.keymap.set('n', '<leader>g', ':grep ', { desc = '内容搜索' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = '诊断列表' })
 vim.keymap.set('i', 'jj', '<Esc>', { desc = '退出插入模式' })
 -- visual 模式粘贴时，选中文本丢入黑洞寄存器，不污染剪贴板
