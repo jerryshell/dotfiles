@@ -1,7 +1,5 @@
 [http]
-	proxy = socks5://127.0.0.1:7890
-[https]
-	proxy = socks5://127.0.0.1:7890
+	proxy = socks5h://127.0.0.1:7890
 [user]
 	name = Jerry
 	email = calljerryli@outlook.com
